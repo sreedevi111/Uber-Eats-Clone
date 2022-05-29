@@ -1,8 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 
-const RestaurantItem = ({restaurant}) => {
-   
+const RestaurantItem = ({ restaurant }) => {
   return (
     <View style={styles.restaurantContainer}>
       <Image
@@ -11,18 +10,18 @@ const RestaurantItem = ({restaurant}) => {
         }}
         style={styles.image}
       />
-      <View style ={styles.row}>
+      <View style={styles.row}>
+        <View>
+          <Text style={styles.title}>{restaurant.name}</Text>
+          <Text style={styles.subtitle}>
+            $ {restaurant.deliveryFee} {restaurant.minDeliveryTime} -{" "}
+            {restaurant.maxDeliveryTime} minutes
+          </Text>
+        </View>
 
-      <View>
-      <Text style={styles.title}>{restaurant.name}</Text>
-      <Text style={styles.subtitle}>$ {restaurant.deliveryFee} {restaurant.minDeliveryTime} - {restaurant.maxDeliveryTime} minutes</Text>
-      </View>
-
-
-      <View style ={styles.rating}>
-<Text>{restaurant.rating}</Text>
-
-      </View>
+        <View style={styles.rating}>
+          <Text>{restaurant.rating}</Text>
+        </View>
       </View>
     </View>
   );
@@ -48,20 +47,19 @@ const styles = StyleSheet.create({
   subtitle: {
     color: "gray",
   },
-  row:{
-      flex:1,
-      flexDirection:'row',
-      alignItems: 'center'
+  row: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
   },
-  rating:{
-      marginLeft:'auto',
-      backgroundColor:'lightgray',
-      
-      borderRadius:20,
-      width:30,
-      height:25,
-      alignItems:'center',
-      justifyContent:'center'
+  rating: {
+    marginLeft: "auto",
+    backgroundColor: "lightgray",
 
-  }
+    borderRadius: 20,
+    width: 30,
+    height: 25,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
