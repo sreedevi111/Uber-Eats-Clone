@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import BasketDishItem from "./src/screens/Basket";
+import OrdersScren from './src/screens/OrdersScreen'
 
 // import DishDetailScreen from "./src/screens/DishDetailsScreen";
 
@@ -13,8 +14,8 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <RestaurantDetailsPage /> */}
       {/* <DishDetailScreen/> */}
-      <BasketDishItem />
-      
+      {/* <BasketDishItem /> */}
+      <OrdersScren />
 
       <StatusBar style="light" />
     </View>
