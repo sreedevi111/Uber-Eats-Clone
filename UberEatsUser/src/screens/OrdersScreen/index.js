@@ -6,7 +6,7 @@ import React from 'react'
 
 const OrdersScreen = () => {
   return (
-    <View style = {{flex:1, paddingTop:52}}>
+    <View style = {{flex:1}}>
      <FlatList 
      data={orders}
      renderItem ={({item}) => <OrderListItem order = {item}/>}
