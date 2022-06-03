@@ -6,6 +6,7 @@ import DishDetailsScreen from "../screens/DishDetailsScreen";
 import Basket from "../screens/Basket";
 import OrdersScreen from "../screens/OrdersScreen";
 import OrderDetails from "../screens/OrderDetails";
+import Profile from "../screens/ProfileScreen";
 
 import { Foundation, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 
@@ -44,7 +45,7 @@ const HomeTabs = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={OrdersScreen}
+        component={Profile}
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome5 name="user-alt" size={24} color={color} />
