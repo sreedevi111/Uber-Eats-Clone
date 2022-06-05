@@ -16,6 +16,7 @@ const RootNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeTabs" component={HomeTabs} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
     </Stack.Navigator>
   );
 };
@@ -63,7 +64,7 @@ const HomeStackNavigator = () => {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Restaurants" component={HomeScreen}  />
       <HomeStack.Screen name="Restaurant" component={RestaurantDetailsScreen} options ={{headerShown: false}}/>
-      <HomeStack.Screen name="Dish" component={DishDetailsScreen} />
+      <HomeStack.Screen name="Dish" component={DishDetailsScreen} options={{headerBackTitle: null}}  />
       <HomeStack.Screen name="Basket" component={Basket} />
     </HomeStack.Navigator>
   );

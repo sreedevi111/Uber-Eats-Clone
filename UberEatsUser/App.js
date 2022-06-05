@@ -5,6 +5,8 @@ import RootNavigator from "./src/navigation";
 import { Amplify } from "aws-amplify";
 import { withAuthenticator } from "aws-amplify-react-native";
 import awsmobile from "./src/aws-exports";
+import AuthContextProvider from './src/contexts/AuthContext'
+
 // Amplify.configure(awsmobile);
 Amplify.configure({
   ...awsmobile,
@@ -22,8 +24,11 @@ Amplify.configure({
       {/* <BasketDishItem /> */}
       {/* <OrdersScren /> */}
       {/* <OrderDetails /> */}
+      <AuthContextProvider>
       <RootNavigator />
-
+{/* By putting root navigator in authcontextprovider, it is sent as children */}
+      </AuthContextProvider>
+    
       <StatusBar style="light" />
     </NavigationContainer>
   );
