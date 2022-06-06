@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import orders from "./assets/orders.json";
+import OrderScreen from './src/screens/OrderScreen'
+
 
 import OrderItem from "./src/components/OrderItem";
 
@@ -9,10 +11,11 @@ const order = orders[0];
 export default function App() {
   return(
     <View style={styles.container}>
-    <FlatList 
+    {/* <FlatList 
     data = {orders}
     renderItem ={({item}) => <OrderItem order = {item}/>}
-    />
+    /> */}
+    < OrderScreen />
    <StatusBar style="auto" />
     </View>
   )
