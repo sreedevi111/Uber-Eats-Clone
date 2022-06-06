@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import orders from "./assets/orders.json";
-import OrderScreen from './src/screens/OrderScreen'
+// import OrderScreen from './src/screens/OrderScreen'
+import OrderDelivery from "./src/screens/OrderDelivery";
 
 
 import OrderItem from "./src/components/OrderItem";
@@ -15,7 +16,7 @@ export default function App() {
     data = {orders}
     renderItem ={({item}) => <OrderItem order = {item}/>}
     /> */}
-    < OrderScreen />
+    < OrderDelivery/>
    <StatusBar style="auto" />
     </View>
   )

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { View, Text, FlatList } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import orders from "../../../assets/orders.json";
@@ -6,10 +6,11 @@ import OrderItem from "../../components/OrderItem";
 
 const OrderScreen = () => {
   const bottomSheetRef = useRef(null);
+  const snapPoints = useMemo(()=>["12%","95%"],[])
 
   return (
     <View style={{ backgroundColor: "lightblue", flex: 1 }}>
-      <BottomSheet ref={bottomSheetRef} index={0} snapPoints={["12%", "95%"]}>
+      <BottomSheet ref={bottomSheetRef} index={0} snapPoints={snapPoints}>
         <View style={{ flex: 1, alignItems: "center", marginBottom:30 }}>
           <Text
             style={{
