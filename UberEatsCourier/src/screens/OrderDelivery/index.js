@@ -1,16 +1,23 @@
-import { View, Text } from "react-native";
+import { View, Text, useWindowDimensions } from "react-native";
 import { useRef, useMemo } from "react";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { FontAwesome5, Fontisto } from "@expo/vector-icons";
 import orders from "../../../assets/orders.json";
+import MapView, { Marker } from "react-native-maps";
 
 const order = orders[0];
 
 const OrderDelivery = () => {
   const snapPoints = useMemo(() => ["12%", "95%"], []);
   const bottomSheetRef = useRef(null);
+  const { width, height } = useWindowDimensions();
   return (
     <View style={{ backgroundColor: "lightblue", flex: 1 }}>
+      <MapView
+        style={{ width, height }}
+        showsUserLocation
+        followsUserLocation
+      />
       <BottomSheet
         ref={bottomSheetRef}
         index={0}
