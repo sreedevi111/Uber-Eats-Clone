@@ -42,16 +42,30 @@ const OrderDelivery = () => {
             {order.Restaurant.name}
           </Text>
 
-          <View style={{ flexDirection: "row", alignItems:'center' }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Fontisto name="shopping-store" size={22} color="grey" />
-            <Text style={{ fontSize: 20, color: "grey", fontWeight: "600",padding:20 }}>
+            <Text
+              style={{
+                fontSize: 20,
+                color: "grey",
+                fontWeight: "600",
+                padding: 20,
+              }}
+            >
               {order.Restaurant.address}
             </Text>
           </View>
 
-          <View style={{ flexDirection: "row",  alignItems:'center' }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Fontisto name="map-marker-alt" size={30} color="grey" />
-            <Text style={{ fontSize: 20, color: "grey", fontWeight: "600",padding:20  }}>
+            <Text
+              style={{
+                fontSize: 20,
+                color: "grey",
+                fontWeight: "600",
+                padding: 20,
+              }}
+            >
               {order.User.address}
             </Text>
           </View>
@@ -62,15 +76,72 @@ const OrderDelivery = () => {
               paddingTop: 10,
             }}
           >
-            <Text style={{fontSize:18,color:'grey', fontWeight:'500', letterSpacing:0.5, marginBottom:5 }}>Onion Rings x1</Text>
-            <Text style={{fontSize:18,color:'grey', fontWeight:'500', letterSpacing:0.5, marginBottom:5 }}>Big Mac x2</Text>
-            <Text style={{fontSize:18,color:'grey', fontWeight:'500', letterSpacing:0.5, marginBottom:5 }}>Big Tasty x1</Text>
-            <Text style={{fontSize:18,color:'grey', fontWeight:'500', letterSpacing:0.5, marginBottom:5 }}>Coco Cola x1</Text>
+            <Text
+              style={{
+                fontSize: 18,
+                color: "grey",
+                fontWeight: "500",
+                letterSpacing: 0.5,
+                marginBottom: 5,
+              }}
+            >
+              Onion Rings x1
+            </Text>
+            <Text
+              style={{
+                fontSize: 18,
+                color: "grey",
+                fontWeight: "500",
+                letterSpacing: 0.5,
+                marginBottom: 5,
+              }}
+            >
+              Big Mac x2
+            </Text>
+            <Text
+              style={{
+                fontSize: 18,
+                color: "grey",
+                fontWeight: "500",
+                letterSpacing: 0.5,
+                marginBottom: 5,
+              }}
+            >
+              Big Tasty x1
+            </Text>
+            <Text
+              style={{
+                fontSize: 18,
+                color: "grey",
+                fontWeight: "500",
+                letterSpacing: 0.5,
+                marginBottom: 5,
+              }}
+            >
+              Coco Cola x1
+            </Text>
           </View>
 
-          <View style={{backgroundColor:'green', marginTop:'auto', height: 40, alignItems:'center', justifyContent:'center', borderRadius:10}} >
-              <Text style={{color:'white', fontWeight:'600', fontSize:20, letterSpacing:0.5}}>Accept Order</Text>
-
+          <View
+            style={{
+              backgroundColor: "green",
+              marginTop: "auto",
+              height: 40,
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 10,
+            }}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontWeight: "600",
+                fontSize: 20,
+                letterSpacing: 0.5,
+              }}
+            >
+              Accept Order
+            </Text>
           </View>
         </View>
       </BottomSheet>
