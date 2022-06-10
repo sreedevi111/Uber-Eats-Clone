@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -10,12 +10,31 @@ import orders from "../../../assets/orders.json";
 import OrderItem from "../../components/OrderItem";
 import MapView, { Marker } from "react-native-maps";
 import { Entypo } from "@expo/vector-icons";
+import * as location from 'expo-location'
 
-const OrdersScreen = () => {
+const OrderScreen = () => {
+  const[driverLocation, setDriverLocation] = useState(null);
   const bottomSheetRef = useRef(null);
   const { width, height } = useWindowDimensions();
 
   const snapPoints = useMemo(() => ["12%", "95%"], []);
+  
+  useEffect(()=>{
+const getDeliveryLocations = async() =>{
+  let {status} = await Location.requestForegroundPermissionsAsync();
+  if(!status === 'granted'){
+    console.log("NONO")
+    return;
+  }
+   let location = await Location.getCurretPositionAsync();
+   setDriverLocation
+   ({
+     latitude: location.coords.latitude,
+     longitude: location.coords.longitude
+   });
+}
+getDeliveryLocations();
+  }, [])
 
   return (
     <View style={{ backgroundColor: "lightblue", flex: 1 }}>
@@ -70,4 +89,4 @@ const OrdersScreen = () => {
   );
 };
 
-export default OrdersScreen;
+export default OrderScreen;
