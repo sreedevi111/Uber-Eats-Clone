@@ -11,9 +11,10 @@ import OrderItem from "../../components/OrderItem";
 import MapView, { Marker } from "react-native-maps";
 import { Entypo } from "@expo/vector-icons";
 
-const OrderScreen = () => {
+const OrdersScreen = () => {
   const bottomSheetRef = useRef(null);
   const { width, height } = useWindowDimensions();
+
   const snapPoints = useMemo(() => ["12%", "95%"], []);
 
   return (
@@ -26,15 +27,14 @@ const OrderScreen = () => {
         showsUserLocation
         followsUserLocation
       >
-        {/* marker for each order */}
         {orders.map((order) => (
           <Marker
-          key = {order.id}
+            key={order.id}
             title={order.Restaurant.name}
             description={order.Restaurant.address}
             coordinate={{
               latitude: order.Restaurant.lat,
-              longitude:order.Restaurant.lng,
+              longitude: order.Restaurant.lng,
             }}
           >
             <View
@@ -45,20 +45,20 @@ const OrderScreen = () => {
           </Marker>
         ))}
       </MapView>
-      <BottomSheet ref={bottomSheetRef} index={0} snapPoints={snapPoints}>
-        <View style={{ flex: 1, alignItems: "center", marginBottom: 30 }}>
+      <BottomSheet ref={bottomSheetRef} snapPoints={snapPoints}>
+        <View style={{ alignItems: "center", marginBottom: 30 }}>
           <Text
             style={{
               fontSize: 20,
               fontWeight: "600",
               letterSpacing: 0.5,
-              paddingBottom: 0.5,
+              paddingBottom: 5,
             }}
           >
             You're Online
           </Text>
-          <Text style={{ letterSpacing: 0.5 }}>
-            Available orders:{orders.length}
+          <Text style={{ letterSpacing: 0.5, color: "grey" }}>
+            Available Orders: {orders.length}
           </Text>
         </View>
         <FlatList
@@ -70,4 +70,4 @@ const OrderScreen = () => {
   );
 };
 
-export default OrderScreen;
+export default OrdersScreen;
